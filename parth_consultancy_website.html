@@ -1,0 +1,404 @@
+<!--
+Parth Consultancy - Single-file Website
+Instructions:
+1) Save this file as `index.html`.
+2) Save the company logo image you uploaded as `logo.png` in the same folder as this file.
+3) Open `index.html` in a browser to view locally, or upload the folder to GitHub Pages / Netlify to host online.
+
+Notes about contact form: This site uses a simple mailto-based contact form (no external backend). When a user submits the form it opens the user's mail client with a prefilled email to parth.mku14@gmail.com. If you later want form submissions to be stored, I can add instructions for using Formspree or Netlify Forms.
+-->
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Parth Consultancy — Accounting & Bookkeeping</title>
+  <meta name="description" content="Parth Consultancy — Professional accounting and bookkeeping services. Contact: 9404032616 | parth.mku14@gmail.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#f7fafc;
+      --card:#ffffff;
+      --accent:#0f6cff;
+      --muted:#6b7280;
+      --dark:#0b1220;
+      --success:#07a77a;
+      --glass: rgba(15,108,204,0.08);
+      font-size:16px;
+    }
+    *{box-sizing:border-box}
+    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial; margin:0; background:linear-gradient(180deg,#f6f9fc, #eef4fb); color:var(--dark);}
+    header{background:radial-gradient(1200px 300px at 10% 10%, rgba(15,108,204,0.09), transparent), linear-gradient(90deg, #fff, #f8fbff); border-bottom:1px solid rgba(11,18,32,0.04);}
+    .container{max-width:1100px;margin:0 auto;padding:20px}
+    nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+    .brand{display:flex;gap:12px;align-items:center}
+    .brand img{width:66px;height:66px;border-radius:12px;object-fit:cover;border:2px solid rgba(11,18,32,0.06);background:white;padding:6px}
+    .brand h1{font-size:20px;margin:0}
+    .brand p{margin:0;font-size:12px;color:var(--muted)}
+    .navlinks a{margin-left:18px;text-decoration:none;color:var(--dark);font-weight:600}
+    .navcalls{display:flex;gap:12px;align-items:center}
+    .btn{background:var(--accent);color:white;padding:8px 14px;border-radius:8px;text-decoration:none;font-weight:600}
+    /* HERO */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;padding:28px 0}
+    .hero-left h2{font-size:34px;margin:8px 0 12px}
+    .lead{color:var(--muted);font-size:15px;line-height:1.6}
+    .core-list{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+    .pill{background:var(--glass);padding:8px 12px;border-radius:999px;font-weight:600}
+    .hero-card{background:var(--card);border-radius:12px;padding:18px;box-shadow:0 6px 18px rgba(15,108,204,0.06)}
+    .hero-right{display:flex;flex-direction:column;gap:12px}
+    .stat{display:flex;align-items:center;justify-content:space-between;padding:10px;border-radius:8px}
+    .stat strong{font-size:22px}
+    /* SECTIONS */
+    section{padding:28px 0}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 8px 20px rgba(12,24,40,0.04)}
+    h3{margin-top:0}
+    .service-list li{margin-bottom:10px}
+    /* Testimonials */
+    .testi{display:flex;gap:14px;align-items:flex-start}
+    .avatar{width:56px;height:56px;border-radius:10px;background:#fff;display:inline-flex;align-items:center;justify-content:center;border:1px solid rgba(11,18,32,0.06)}
+    /* Contact */
+    .contact-grid{display:grid;grid-template-columns:1fr 360px;gap:18px}
+    label{font-weight:600;font-size:13px}
+    input,textarea,select{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(11,18,32,0.08);margin-top:6px;font-size:14px}
+    input:focus,textarea:focus{outline:2px solid rgba(15,108,204,0.12)}
+    .footer{padding:18px 0;border-top:1px solid rgba(11,18,32,0.04);color:var(--muted);font-size:14px}
+    /* RESPONSIVE */
+    @media (max-width:980px){.hero{grid-template-columns:1fr;}.grid{grid-template-columns:repeat(2,1fr)}.contact-grid{grid-template-columns:1fr}.navlinks{display:none}}
+    @media (max-width:560px){.grid{grid-template-columns:1fr}.brand img{width:56px;height:56px}.hero-left h2{font-size:24px}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="brand">
+          <img src="logo.png" alt="Parth Consultancy logo" />
+          <div>
+            <h1>Parth Consultancy</h1>
+            <p>Accounting & Bookkeeping</p>
+          </div>
+        </div>
+        <div class="navcalls">
+          <div class="navlinks">
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#testimonials">Testimonials</a>
+            <a href="#contact">Contact</a>
+          </div>
+          <div style="text-align:right">
+            <div style="font-size:13px;color:var(--muted)">Call / WhatsApp</div>
+            <a class="btn" href="tel:9404032616">9404032616</a>
+          </div>
+        </div>
+      </nav>
+
+      <div class="hero">
+        <div class="hero-left">
+          <div style="display:flex;align-items:center;gap:10px">
+            <span style="background:var(--glass);padding:8px 12px;border-radius:999px;font-weight:700;color:var(--accent)">Trusted</span>
+            <span style="color:var(--muted);font-size:13px">Since 20XX</span>
+          </div>
+          <h2>Professional Accounting & Bookkeeping for Small and Medium Businesses</h2>
+          <p class="lead">Parth Consultancy offers accurate, reliable, and timely accounting services — from day-to-day bookkeeping to monthly financial statements, GST compliance, payroll, and tax-ready reports. We help business owners focus on growth while we manage their numbers.</p>
+
+          <div class="core-list">
+            <div class="pill">Bookkeeping</div>
+            <div class="pill">GST & TDS</div>
+            <div class="pill">Payroll</div>
+            <div class="pill">Financial Reporting</div>
+            <div class="pill">Bank Reconciliation</div>
+          </div>
+
+          <div style="margin-top:18px">
+            <a href="#contact" class="btn">Get a Free Consultation</a>
+            <a href="mailto:parth.mku14@gmail.com" style="margin-left:10px;text-decoration:none;color:var(--accent);font-weight:700">Email Us</a>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <div class="hero-card">
+            <div style="display:flex;align-items:center;justify-content:space-between">
+              <div>
+                <div style="font-size:13px;color:var(--muted)">Clients helped</div>
+                <strong>120+</strong>
+              </div>
+              <div style="text-align:right">
+                <div style="font-size:13px;color:var(--muted)">Avg. Monthly Savings</div>
+                <strong>₹15,000+</strong>
+              </div>
+            </div>
+            <div style="height:12px"></div>
+            <div style="background:linear-gradient(90deg,#dff4ff,rgba(15,108,204,0.06));height:8px;border-radius:999px"></div>
+            <p style="margin:12px 0 0;color:var(--muted);font-size:13px">Transparent fees, fixed monthly plans, and clear deliverables.</p>
+          </div>
+
+          <div class="hero-card" style="display:flex;gap:12px;align-items:center;justify-content:space-between">
+            <div>
+              <div style="font-size:13px;color:var(--muted)">Quick Turnaround</div>
+              <strong>48–72 hrs</strong>
+            </div>
+            <div style="font-size:13px;color:var(--muted);text-align:right">
+              <div>Remote support available</div>
+              <div>Secure document handling</div>
+            </div>
+          </div>
+
+          <div class="hero-card" style="text-align:center">
+            <div style="font-size:13px;color:var(--muted)">Ready to start?</div>
+            <a href="#contact" class="btn" style="display:inline-block;margin-top:8px">Book a Call</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="about">
+      <div class="card" style="display:flex;gap:18px;align-items:center">
+        <div style="flex:1">
+          <h3>About Parth Consultancy</h3>
+          <p style="color:var(--muted)">Parth Consultancy is a professional accounting and bookkeeping firm focused on helping small and medium businesses maintain clean books and remain compliant with statutory requirements. Our team uses industry-standard accounting practices and secure processes to deliver accurate financial records that help owners make informed decisions.</p>
+
+          <ul style="color:var(--muted);margin-top:12px">
+            <li>Experienced bookkeepers and accountants (X+ years combined)</li>
+            <li>Support for GST filings, TDS, payroll, and tax-ready bookkeeping</li>
+            <li>Monthly, quarterly, and annual reporting packages</li>
+            <li>Secure file transfers and confidentiality assured</li>
+          </ul>
+        </div>
+        <div style="width:320px">
+          <div class="card" style="padding:14px">
+            <strong>Contact</strong>
+            <p style="margin:6px 0;color:var(--muted)"><strong>Phone:</strong> <a href="tel:9404032616">9404032616</a></p>
+            <p style="margin:6px 0;color:var(--muted)"><strong>Email:</strong> <a href="mailto:parth.mku14@gmail.com">parth.mku14@gmail.com</a></p>
+            <p style="margin:6px 0;color:var(--muted)"><strong>Office:</strong> Remote / By Appointment</p>
+            <a href="#contact" class="btn" style="display:inline-block;margin-top:8px">Send a Message</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <h3>Our Services</h3>
+      <p style="color:var(--muted)">We provide end-to-end accounting services that are tailored for small and medium businesses. Choose a package or request a custom plan.</p>
+
+      <div class="grid" style="margin-top:16px">
+        <div class="card">
+          <h4>Bookkeeping & Ledger Management</h4>
+          <p style="color:var(--muted)">Daily / monthly recording of transactions, chart of accounts setup, trial balance and ledger maintenance.</p>
+          <ul class="service-list" style="color:var(--muted);padding-left:16px">
+            <li>Daybook and journal entries</li>
+            <li>Bank reconciliation</li>
+            <li>Expense categorization</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h4>GST & Compliance</h4>
+          <p style="color:var(--muted)">GST return preparation, GSTR filing assistance, reconciliation of Input Tax Credit, and advisory on GST impact.</p>
+          <ul class="service-list" style="color:var(--muted);padding-left:16px">
+            <li>GSTR-1 / GSTR-3B support</li>
+            <li>GST reconciliation reports</li>
+            <li>Compliance checklists</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h4>Payroll & Salaries</h4>
+          <p style="color:var(--muted)">Payroll processing, salary computation, PF & ESI calculations, and payslip generation.</p>
+          <ul class="service-list" style="color:var(--muted);padding-left:16px">
+            <li>Monthly payroll runs</li>
+            <li>TDS & statutory deductions</li>
+            <li>Payslip and salary register</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h4>Financial Reporting</h4>
+          <p style="color:var(--muted)">Accurate monthly and annual reports, balance sheet, profit & loss, and cashflow analysis prepared for decision-making.</p>
+          <ul class="service-list" style="color:var(--muted);padding-left:16px">
+            <li>Monthly financial statements</li>
+            <li>Management reports & dashboards</li>
+            <li>Budgeting assistance</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h4>Tax-Ready Services</h4>
+          <p style="color:var(--muted)">We prepare books in a tax-ready format so filing is smooth and audit risk is minimized.</p>
+          <ul class="service-list" style="color:var(--muted);padding-left:16px">
+            <li>Income tax computation support</li>
+            <li>Assistance during audits</li>
+            <li>Statutory compliance checks</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h4>Advisory & Cleanup</h4>
+          <p style="color:var(--muted)">One-time cleanups for messy books, system setup, and advisory for accounting workflows and software selection.</p>
+          <ul class="service-list" style="color:var(--muted);padding-left:16px">
+            <li>Accounting system setup</li>
+            <li>Cleanup & error rectification</li>
+            <li>Software migration advice</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonials">
+      <h3>Testimonials</h3>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:12px">
+        <div class="card testi">
+          <div class="avatar">A</div>
+          <div>
+            <strong>R. Sharma — Owner, Sharma Traders</strong>
+            <p style="color:var(--muted);margin-top:6px">"Parth Consultancy made filing GST simple for us — accurate ledgers and timely reports. Highly recommended for small businesses."</p>
+          </div>
+        </div>
+
+        <div class="card testi">
+          <div class="avatar">S</div>
+          <div>
+            <strong>S. Mehta — Director, Mehta Furnishings</strong>
+            <p style="color:var(--muted);margin-top:6px">"Professional, quick turnaround, and transparent fees. Their bookkeeping quality has helped our business stay audit-ready."</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <strong>Client Logos</strong>
+          <p style="color:var(--muted);margin-top:8px">(Placeholder) — Add client logos or case studies here to build trust.</p>
+        </div>
+
+        <div class="card">
+          <strong>More reviews</strong>
+          <p style="color:var(--muted);margin-top:8px">You can add Google Reviews or direct testimonials. I can help add star ratings later.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h3>Contact Us</h3>
+      <p style="color:var(--muted)">Share your requirements and we will get back to you with a clear plan and quote.</p>
+
+      <div class="contact-grid" style="margin-top:12px">
+        <div>
+          <div class="card">
+            <form id="contactForm">
+              <label for="name">Full name</label>
+              <input id="name" name="name" required placeholder="Your full name" />
+
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" required placeholder="you@example.com" />
+
+              <label for="phone">Phone</label>
+              <input id="phone" name="phone" placeholder="9404032616" />
+
+              <label for="service">Service interested in</label>
+              <select id="service" name="service">
+                <option>Bookkeeping</option>
+                <option>GST & Compliance</option>
+                <option>Payroll</option>
+                <option>Financial Reporting</option>
+                <option>Custom / Consultancy</option>
+              </select>
+
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Tell us about your business and needs"></textarea>
+
+              <div style="margin-top:12px;display:flex;gap:10px;align-items:center">
+                <button type="submit" class="btn">Send Message</button>
+                <span style="color:var(--muted);font-size:13px">Or email: <a href="mailto:parth.mku14@gmail.com">parth.mku14@gmail.com</a></span>
+              </div>
+            </form>
+
+            <div id="thanks" style="display:none;margin-top:12px;color:var(--success);font-weight:700">Thanks — your email client should open now. If it doesn't, please email us directly.</div>
+
+            <hr style="margin:16px 0;border:none;border-top:1px solid rgba(11,18,32,0.04)" />
+
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <div style="font-weight:700">Quick contact</div>
+              <div style="color:var(--muted)"><strong>Phone:</strong> <a href="tel:9404032616">9404032616</a></div>
+              <div style="color:var(--muted)"><strong>Email:</strong> <a href="mailto:parth.mku14@gmail.com">parth.mku14@gmail.com</a></div>
+              <div style="color:var(--muted)"><strong>Availability:</strong> Mon–Sat, 9am–6pm (By appointment)</div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="card">
+            <h4>Our Location</h4>
+            <p style="color:var(--muted)">Remote services with in-person meetings by appointment. Below is a map search so clients can find nearby offices if listed in maps.</p>
+            <div style="width:100%;height:260px;margin-top:10px;border-radius:8px;overflow:hidden;border:1px solid rgba(11,18,32,0.06)">
+              <iframe width="100%" height="100%" style="border:0" loading="lazy" allowfullscreen
+                src="https://www.google.com/maps?q=Parth%20Consultancy&output=embed"></iframe>
+            </div>
+
+            <h4 style="margin-top:12px">Business hours</h4>
+            <p style="color:var(--muted)">Monday — Saturday: 09:00 — 18:00</p>
+            <p style="color:var(--muted)">Sunday: Closed</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing">
+      <h3>Pricing (Example packages)</h3>
+      <p style="color:var(--muted)">We offer fixed monthly packages. Contact us for a tailored quote based on volumes and complexity.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:12px">
+        <div class="card" style="min-width:220px">
+          <strong>Starter</strong>
+          <p style="color:var(--muted)">For micro businesses — basic bookkeeping & monthly report</p>
+          <div style="font-size:20px;font-weight:800">₹2,999 / month</div>
+        </div>
+        <div class="card" style="min-width:220px;background:linear-gradient(180deg,#fff,#f8fbff);border:1px solid rgba(15,108,204,0.08)">
+          <strong>Growth</strong>
+          <p style="color:var(--muted)">Includes GST reconciliations and quarterly advisory</p>
+          <div style="font-size:20px;font-weight:800">₹6,999 / month</div>
+        </div>
+        <div class="card" style="min-width:220px">
+          <strong>Business</strong>
+          <p style="color:var(--muted)">Complete bookkeeping, payroll and monthly financials</p>
+          <div style="font-size:20px;font-weight:800">Custom pricing</div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="container footer">
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap">
+      <div>
+        <strong>Parth Consultancy</strong>
+        <div style="color:var(--muted)">Accounting & Bookkeeping • parth.mku14@gmail.com • 9404032616</div>
+      </div>
+      <div style="text-align:right;color:var(--muted)">© <span id="year"></span> Parth Consultancy. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Contact form: uses mailto to open user's email client
+    document.getElementById('contactForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      var name = encodeURIComponent(document.getElementById('name').value || '');
+      var email = encodeURIComponent(document.getElementById('email').value || '');
+      var phone = encodeURIComponent(document.getElementById('phone').value || '');
+      var service = encodeURIComponent(document.getElementById('service').value || '');
+      var message = encodeURIComponent(document.getElementById('message').value || '');
+
+      var subject = encodeURIComponent('Website Enquiry from ' + (name || email || phone));
+      var body = 'Name: '+name+'%0D%0AEmail: '+email+'%0D%0APhone: '+phone+'%0D%0AService: '+service+'%0D%0A%0D%0AMessage:%0D%0A'+message;
+
+      // open mail client
+      var mailto = 'mailto:parth.mku14@gmail.com?subject=' + subject + '&body=' + body;
+      window.location.href = mailto;
+
+      // show thanks message
+      document.getElementById('thanks').style.display = 'block';
+    });
+  </script>
+</body>
+</html>
